@@ -18,7 +18,7 @@ def main():
     time1 = raw_input("How long do you want to search for in seconds? ")
     wait = raw_input("How long do you want to wait between searches in seconds? ")
     time2 = float(time1)
-    while time2 > 1:
+    while time2 > float(wait):
         # specify the url
         quote_page = 'https://www.investopedia.com/markets/stocks/intc/?ad=dirN&qo=investopediaSiteSearch&qsrc=0&o=40186'
         # query the website and return the html to the variable 'page'
@@ -34,6 +34,6 @@ def main():
             writer = csv.writer(csv_file)
             writer.writerow([price, datetime.now()])
         time2 -= float(wait)
-        time.sleep(1)
+        time.sleep(float(wait))
 	
 main()
